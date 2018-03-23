@@ -10,6 +10,7 @@ mkdir -p $workdir && pushd $workdir &>/dev/null
 curl -LSfs -o dots.zip https://github.com/ericbriffa/$repo/archive/$branch.zip
 unzip -qo dots.zip && cd $repo-$branch
 
-find . -name ".*" -type f -print -exec cp {} $HOME \;
+find . -name ".*" -type f -print -exec cp -f {} $HOME \;
 
 popd &>/dev/null
+rm -rf $workdir
