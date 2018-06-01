@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 set -e
 
-workdir=/tmp/dotfiles
+workdir=$(mktemp -d)
 repo=dotfiles
-branch=master
+branch=${BRANCH:-master}
+url=https://github.com/ericbriffa/$repo/archive/$branch.zip
 
-mkdir -p $workdir && pushd $workdir &>/dev/null
+echo "Getting files from ${url}"
 
-curl -LSfs -o dots.zip https://github.com/ericbriffa/$repo/archive/$branch.zip
+pushd ${workdir} &>/dev/null
+
+curl -LSfs -o dots.zip "$url" 
 unzip -qo dots.zip && cd $repo-$branch
 
 find . -name ".*" -type f -print -exec cp -f {} $HOME \;
