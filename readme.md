@@ -1,9 +1,9 @@
 # dotfiles
 
-My dots.
+My dotfiles.
 
 ## Install
 
 ```
-$ curl -fsSL https://raw.github.com/ericbriffa/dotfiles/master/install.sh | bash
+$ BRANCH=test bash -c $(curl -fsSL https://raw.github.com/ericbriffa/dotfiles/${BRANCH}/install.sh)
 ```

@@ -20,5 +20,9 @@ PROMPT_COMMAND='PS1=$(prompt_gen)'
 
 export CLICOLOR=1
 
+# ls with colours for BSD / GNU
+if ls --help 2>&1 | grep -q -- --color; then
+  alias ls='ls --color=auto -Flah'; else
+  alias ls='ls -Flah'; fi
+
 alias grep='grep --color=auto'
-alias ls='ls -Flah'
