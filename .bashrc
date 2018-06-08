@@ -25,4 +25,5 @@ if ls --help 2>&1 | grep -q -- --color; then
   alias ls='ls --color=auto -Flah'; else
   alias ls='ls -Flah'; fi
 
+[ -r "~/.alias" ] && source ~/.alias
 alias grep='grep --color=auto'
