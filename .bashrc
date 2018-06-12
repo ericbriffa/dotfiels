@@ -18,12 +18,17 @@ function prompt_gen {
 
 PROMPT_COMMAND='PS1=$(prompt_gen)'
 
+# History
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+shopt -s histappend
+
 export CLICOLOR=1
-
-# ls with colours for BSD / GNU
 if ls --help 2>&1 | grep -q -- --color; then
-  alias ls='ls --color=auto -Flah'; else
-  alias ls='ls -Flah'; fi
+  alias ls='ls --color=auto -Flah'; else  # GNU ls
+  alias ls='ls -Flah'; fi  # BSD ls
 
-[ -r "$HOME/.alias" ] && source $HOME/.alias
+# Load external .alias file
+[ -f $HOME/.alias ] && source $HOME/.alias
+
 alias grep='grep --color=auto'
