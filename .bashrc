@@ -34,5 +34,4 @@ if ls --help 2>&1 | grep -q -- --color; then
 alias grep='grep --color=auto'
 alias egrep='grep --color=auto'
 alias fgrep='grep --color=auto'
-
 alias gl='git log --oneline --decorate --all --color'
