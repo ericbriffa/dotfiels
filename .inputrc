@@ -3,3 +3,7 @@
 
 set show-all-if-ambiguous on
 set completion-ignore-case on
+
+set colored-stats On
+set visible-stats On
+set colored-completion-prefix On
