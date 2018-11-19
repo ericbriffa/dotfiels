@@ -29,9 +29,11 @@ shopt -s histappend
 
 # Aliases
 export CLICOLOR=1
-if ls --help 2>&1 | grep -q -- --color; then
-  alias ls='ls --color=auto -Flah'; else  # GNU ls
-  alias ls='ls -Flah'; fi  # BSD ls
+
+if ls --help 2>&1 | grep -q -- --color;
+  then alias ls='ls --color=auto -Flah'; # GNU ls
+  else alias ls='ls -Flah'; # This is BSD ls
+  fi
 
 alias grep='grep --color=auto'
 alias egrep='grep --color=auto'
