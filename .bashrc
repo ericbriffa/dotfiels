@@ -11,7 +11,7 @@ function prompt_gen {
 
   [ $EXIT_STATUS -ne 0 ] && LAST_RETURN="$INVERT$RED $EXIT_STATUS $RESET "
 
-  git rev-parse --is-inside-work-tree &>/dev/null && local br="$(git symbolic-ref --short -q HEAD) "
+  git rev-parse --is-inside-work-tree &>/dev/null && local br="$(git symbolic-ref --short -q HEAD || git rev-parse --short HEAD) "
   [ $br ] && [ $(git status --porcelain | wc -l) -ne "0" ] && local BRCOLOUR="$YELLOW"
   
   local HOSTCOLOR=$CYAN  # Hostname is Cyan
