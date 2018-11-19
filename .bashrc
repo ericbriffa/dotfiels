@@ -38,9 +38,12 @@ if ls --help 2>&1 | grep -q -- --color;
 alias grep='grep --color=auto'
 alias egrep='grep --color=auto'
 alias fgrep='grep --color=auto'
+alias gl='git log --oneline --decorate --all --color'
+
 [ -f $HOME/.alias ] && source $HOME/.alias  # External alias file if present
 
-alias gl='git log --oneline --decorate --all --color'
+export EDITOR=vim
+[ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
 
 # Paths
 export PATH=$PATH:$HOME/bin
